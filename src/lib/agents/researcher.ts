@@ -3,6 +3,8 @@ import {
   PlannerOutput,
   ResearcherOutput,
   ResearchSource,
+  VerifiedFact,
+  VerifiedStatistic,
   ToolExecutionLog,
 } from "../types";
 import { searchTavily, getTavilyApiKey } from "../services/tavily";
@@ -113,8 +115,8 @@ export async function runResearcherAgent(
   }
 
   // Synthesize research findings using Gemini if available
-  let verifiedFacts = [];
-  let statistics = [];
+  let verifiedFacts: VerifiedFact[] = [];
+  let statistics: VerifiedStatistic[] = [];
   let industryTrends: string[] = [];
   let summary = "";
 
